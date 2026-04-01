@@ -1,0 +1,79 @@
+/* 🔥 HEADER (same as other pages) */
+.page-header {
+  margin-bottom: 15px;
+}
+
+.page-header h2 {
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #777;
+  margin-top: 3px;
+}
+
+/* 🔥 REMOVE CARD → clean layout */
+.calendar-wrapper {
+  height: calc(100vh - 160px);
+
+  background: #ffffff;
+
+  /* 🔥 Bold but clean border */
+  border: 2px solid #777C6D;
+
+  /* 🔥 Softer edges */
+  border-radius: 18px;
+
+  padding: 12px;
+
+  /* 🔥 smooth subtle shadow */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* 🔥 CALENDAR */
+.rbc-calendar {
+  height: 100%;
+  border-radius: 12px;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* 🔥 TOOLBAR */
+.rbc-toolbar {
+  margin-bottom: 12px;
+}
+
+
+.rbc-toolbar button {
+  border: 2px solid #777C6D;   /* 🔥 bold border */
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rbc-toolbar button:hover {
+  background: #f5f5f5;
+  border-color: #5f6457;  /* slightly darker */
+}
+
+.rbc-active {
+  background: #777C6D !important;
+  color: white !important;
+  border: 2px solid #777C6D !important;
+}
+
+/* 🔥 TODAY */
+.rbc-today {
+  background: #e3f2fd !important;
+}
+
+/* 🔥 EVENTS */
+.rbc-event {
+  border-radius: 6px !important;
+  padding: 2px 6px !important;
+  font-size: 12px;
+  font-weight: 500;
+}

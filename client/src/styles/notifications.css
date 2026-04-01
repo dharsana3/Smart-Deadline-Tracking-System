@@ -1,0 +1,130 @@
+/* 🔥 NOTIFICATION CARD */
+.notification-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 14px;
+
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+
+  transition: all 0.25s ease;
+}
+
+.notification-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* 🔥 TITLE */
+.notification-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #0f172a;
+}
+
+/* 🔥 DATE */
+.notification-card p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* ================= STATUS STYLES ================= */
+
+/* 🔴 OVERDUE */
+.notification-card.overdue {
+  border-left: 4px solid #ef4444;
+  background: #fff5f5;
+}
+
+.notification-card.overdue .warning {
+  color: #dc2626;
+}
+
+/* 🟡 TODAY */
+.notification-card.today {
+  border-left: 4px solid #f59e0b;
+  background: #fffbeb;
+}
+
+.notification-card.today .warning {
+  color: #d97706;
+}
+
+/* 🔵 TOMORROW */
+.notification-card.tomorrow {
+  border-left: 4px solid #3b82f6;
+  background: #eff6ff;
+}
+
+.notification-card.tomorrow .warning {
+  color: #2563eb;
+}
+
+/* 🔥 LABEL */
+.warning {
+  font-weight: 600;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* 🔥 EMPTY STATE */
+.empty-msg {
+  margin-top: 30px;
+  color: #64748b;
+  text-align: center;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark .notification-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+}
+
+/* Title */
+body.dark .notification-card h3 {
+  color: #e2e8f0;
+}
+
+/* Text */
+body.dark .notification-card p {
+  color: #94a3b8;
+}
+
+/* 🔴 OVERDUE */
+body.dark .notification-card.overdue {
+  background: rgba(239,68,68,0.1);
+  border-left: 4px solid #ef4444;
+}
+
+body.dark .notification-card.overdue .warning {
+  color: #f87171;
+}
+
+/* 🟡 TODAY */
+body.dark .notification-card.today {
+  background: rgba(245,158,11,0.1);
+  border-left: 4px solid #f59e0b;
+}
+
+body.dark .notification-card.today .warning {
+  color: #fbbf24;
+}
+
+/* 🔵 TOMORROW */
+body.dark .notification-card.tomorrow {
+  background: rgba(59,130,246,0.1);
+  border-left: 4px solid #3b82f6;
+}
+
+body.dark .notification-card.tomorrow .warning {
+  color: #60a5fa;
+}
+
+/* EMPTY */
+body.dark .empty-msg {
+  color: #94a3b8;
+}

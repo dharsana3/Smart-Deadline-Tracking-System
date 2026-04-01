@@ -1,0 +1,253 @@
+/* 👤 User Info Card */
+.user-info {
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   📊 CHARTS LAYOUT
+========================= */
+.charts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* 💎 Chart Card */
+.chart-card {
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.chart-card h3 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* =========================
+   📈 TREND CARD
+========================= */
+.trend-card {
+  padding: 15px 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.trend {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+.trend.up { color: #bbf7d0; }
+.trend.down { color: #fecaca; }
+.trend.same { color: #e5e7eb; }
+
+/* =========================
+   📊 STATS CARDS
+========================= */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 15px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.stat-card h4 {
+  font-size: 14px;
+  color: #777;
+}
+
+.stat-card p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Variants */
+.stat-card.success { border-left: 5px solid #4CAF50; }
+.stat-card.danger { border-left: 5px solid #f44336; }
+.stat-card.warning { border-left: 5px solid #ff9800; }
+.stat-card.highlight { border-left: 5px solid #6366f1; }
+
+/* =========================
+   📊 PERCENTAGE CARDS (UPGRADED)
+========================= */
+.profile-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-box {
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+}
+
+/* Header */
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-header h4 {
+  font-size: 14px;
+  color: #888;
+}
+
+.stat-header span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Percentage */
+.percent {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Progress Bar */
+.progress-bar {
+  height: 6px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.progress.success {
+  background: #4CAF50;
+}
+
+.progress.danger {
+  background: #f44336;
+}
+
+/* =========================
+   🌙 DARK MODE
+========================= */
+body.dark .chart-card,
+body.dark .stat-card,
+body.dark .stat-box {
+  color: #e5e5e5;
+}
+
+body.dark .chart-card {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+body.dark .trend-card {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+
+body.dark h2,
+body.dark h3 {
+  color: #f5f5f5;
+}
+
+/* =========================
+   📱 RESPONSIVE
+========================= */
+@media (max-width: 1000px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 👤 PROFILE HEADER */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* Avatar */
+.profile-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Details */
+.profile-details h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.profile-details p {
+  margin: 4px 0;
+  color: #777;
+}
+
+/* Meta */
+.profile-meta {
+  margin-top: 8px;
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* 🌙 Dark Mode */
+body.dark .profile-header {
+  color: #e5e5e5;
+}
+
+body.dark .profile-details p {
+  color: #aaa;
+}
+
+body.dark .profile-meta {
+  color: #ccc;
+}

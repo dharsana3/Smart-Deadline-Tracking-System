@@ -1,0 +1,252 @@
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  overflow: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  height: 80px;
+  background: #0f172a; /* 🔥 deeper premium dark */
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  color: #e2e8f0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.nav-right {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5f5;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 200px;
+  background: #020617; /* 🔥 richer dark */
+  padding: 20px;
+
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: calc(100vh - 80px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid #1e293b;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Nav items */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #94a3b8;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #1e293b;
+  color: #e2e8f0;
+}
+
+.nav-item.active {
+  background: #1e293b;
+  color: #fff;
+  box-shadow: inset 3px 0 0 #6366f1; /* 🔥 premium highlight */
+}
+
+/* ================= CONTENT ================= */
+.dashboard-content {
+  flex: 1;
+  padding: 20px 25px;
+  margin-top: 80px;
+  margin-left: 200px;
+
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f8fafc;
+}
+
+/* ================= HEADER ================= */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+/* Primary */
+.primary-btn {
+  background: #6366f1;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Back */
+.back-btn {
+  background: #e2e8f0;
+}
+
+.back-btn:hover {
+  background: #cbd5e1;
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.dashboard-header p {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ================= GRID ================= */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* ================= CARD ================= */
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+
+  transition: all 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover */
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
+
+/* ================= ICON ================= */
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* ================= TEXT ================= */
+.stat-card h3 {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 6px 0;
+  color:#110e0e; /* darker = better visibility */
+}
+
+/* ================= COLORS ================= */
+.total {
+  border-top: 4px solid #6366f1;
+}
+
+.completed {
+  border-top: 4px solid #22c55e;
+}
+
+.pending {
+  border-top: 4px solid #f59e0b;
+}
+
+.overdue {
+  border-top: 4px solid #ef4444;
+}
+
+body.dark .stat-card p{
+  color:#e2e8f0;
+}
