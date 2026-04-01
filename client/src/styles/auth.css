@@ -86,3 +86,58 @@
   color: #777C6D;
   font-weight: 600;
 }
+
+/* DARK MODE SUPPORT FOR AUTH */
+body.dark .auth-container {
+  background-color: #0f172a;
+}
+
+body.dark .auth-form {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+}
+
+body.dark .subtitle {
+  color: #94a3b8;
+}
+
+body.dark .input-group {
+  background: #020617;
+  border: 1px solid #334155;
+}
+
+body.dark .input-group input {
+  color: #e2e8f0;
+}
+
+body.dark .auth-form button {
+  background: #334155;
+}
+
+body.dark .auth-form button:hover {
+  background: #475569;
+}
+
+body.dark .switch-link a {
+  color: #93c5fd;
+} 
+
+/* Autofill fix (Chrome, Edge) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #EEEEEE inset !important;
+  box-shadow: 0 0 0 1000px #EEEEEE inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+body.dark input:-webkit-autofill,
+body.dark input:-webkit-autofill:hover,
+body.dark input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #020617 inset !important;
+  box-shadow: 0 0 0 1000px #020617 inset !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}

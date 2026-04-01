@@ -10,7 +10,7 @@ import { AuthContext } from "../context/AuthContext";
 import Navbar from "../components/layout/Navbar";
 import Sidebar from "../components/layout/Sidebar";
 
-import "../styles/calendar.css";
+import "../styles/Calendar.css";
 
 const locales = {
   "en-US": enUS,

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaSun, FaMoon } from "react-icons/fa";
 
 function Navbar() {
 
@@ -9,18 +9,14 @@ function Navbar() {
   return (
     <div className="navbar">
 
-      {/* CENTER TITLE */}
       <h3 className="nav-center">SMART DEADLINE TRACKER</h3>
 
-      {/* RIGHT SIDE */}
       <div className="nav-right">
 
-        {/* 🌙 DARK MODE TOGGLE */}
         <button onClick={toggleDarkMode} className="theme-toggle">
-          {darkMode ? "☀️" : "🌙"}
+          {darkMode ? <FaSun /> : <FaMoon />}
         </button>
 
-        {/* USER */}
         <div className="user">
           <FaUserCircle />
           <span>{user?.username}</span>

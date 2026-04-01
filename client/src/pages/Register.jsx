@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { registerUser } from "../services/authService";
+import { useState, useContext } from "react";
+import { registerUser, loginUser } from "../services/authService";
 import { useNavigate, Link } from "react-router-dom";
-import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { loginUser } from "../services/authService";
+import { FaUser, FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/auth.css";
 
 function Register() {
@@ -19,32 +18,24 @@ function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  try {
-    // Step 1: Register
-    await registerUser({
-      username,
-      email,
-      passwordHash
-    });
+    try {
+      await registerUser({ username, email, passwordHash });
 
-    // Step 2: Login automatically
-    const res = await loginUser({
-      email,
-      password: passwordHash
-    });
+      const res = await loginUser({
+        email,
+        password: passwordHash
+      });
 
-    login(res.data);
+      login(res.data);
+      navigate("/dashboard");
 
-    // Step 3: Redirect
-    navigate("/dashboard");
-
-  } catch (error) {
-    console.error(error);
-    setError(error.response?.data || "Registration failed");
-  }
-};
+    } catch (error) {
+      console.error(error);
+      setError(error.response?.data || "Registration failed");
+    }
+  };
 
   return (
     <div className="auth-container">
@@ -57,9 +48,8 @@ function Register() {
         {error && <p className="error">{error}</p>}
         {success && <p className="success">{success}</p>}
 
-        {/* Username */}
         <div className="input-group">
-          <span>👤</span>
+          <FaUser />
           <input
             type="text"
             placeholder="Username"
@@ -69,9 +59,8 @@ function Register() {
           />
         </div>
 
-        {/* Email */}
         <div className="input-group">
-          <span>📧</span>
+          <FaEnvelope />
           <input
             type="email"
             placeholder="Email address"
@@ -81,9 +70,8 @@ function Register() {
           />
         </div>
 
-        {/* Password */}
         <div className="input-group">
-          <span>🔒</span>
+          <FaLock />
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -95,7 +83,7 @@ function Register() {
             className="toggle"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "🙈" : "👁"}
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
 

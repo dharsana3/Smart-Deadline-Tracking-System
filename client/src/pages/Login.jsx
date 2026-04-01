@@ -1,8 +1,8 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { loginUser } from "../services/authService";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/auth.css";
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { login } = useContext(AuthContext);
+  const { login, user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,13 +27,9 @@ function Login() {
     }
   };
 
-  const { user } = useContext(AuthContext);
-
   useEffect(() => {
-    if (user) {
-      navigate("/dashboard");
-    }
-  }, [user, navigate]); 
+    if (user) navigate("/dashboard");
+  }, [user, navigate]);
 
   return (
     <div className="auth-container">
@@ -45,9 +41,8 @@ function Login() {
 
         {error && <p className="error">{error}</p>}
 
-        {/* Email */}
         <div className="input-group">
-          <span>📧</span>
+          <FaEnvelope />
           <input
             type="email"
             placeholder="Email address"
@@ -57,9 +52,8 @@ function Login() {
           />
         </div>
 
-        {/* Password */}
         <div className="input-group">
-          <span>🔒</span>
+          <FaLock />
           <input
             type={showPassword ? "text" : "password"}
             placeholder="Password"
@@ -71,7 +65,7 @@ function Login() {
             className="toggle"
             onClick={() => setShowPassword(!showPassword)}
           >
-            {showPassword ? "🙈" : "👁"}
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
           </span>
         </div>
 
